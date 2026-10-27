@@ -6,6 +6,9 @@ set -euo pipefail
 REPO="2847181243-ops/kdevelop-ohos-artifacts"
 TAG="${1:-}"
 
+# 网络受限（GitHub 直连被墙）时可以先用 ghproxy 手动下载：
+#   https://ghproxy.net/https://github.com/2847181243-ops/kdevelop-ohos-artifacts/releases/download/<tag>/<file>.hap
+
 if ! command -v gh >/dev/null 2>&1; then
     echo "需要 GitHub CLI (gh)。装好后 gh auth login 一次即可。" >&2
     exit 1
